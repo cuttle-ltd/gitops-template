@@ -1,0 +1,22 @@
+# Manually apply this (kubectl apply ...)
+
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gitops-template-project
+  namespace: argocd
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  description: "Gitops Template Project"
+  sourceRepos:
+    - "*"
+  destinations:
+    - namespace: "*"
+      server: '*'
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
