@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: hello-world
-        image: ovhplatform/hello
+      - name: frontend
+        image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         ports:
         - containerPort: 80
