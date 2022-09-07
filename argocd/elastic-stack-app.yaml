@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elastic-stack-app
+  namespace: argocd
+spec:
+  project: gitops-template-project
+  source:
+    repoURL: https://github.com/cuttle-ltd/gitops-template.git
+    targetRevision: HEAD
+    path: elastic-stack
+  destination:
+    server: '{{url}}'
+    namespace: '{{namespace}}'
+  syncPolicy:
+    automated:
+      prune: true
