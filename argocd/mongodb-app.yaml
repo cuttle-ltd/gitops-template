@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongodb-app
+  namespace: argocd
+spec:
+  project: gitops-template-project
+  source:
+    repoURL: https://github.com/cuttle-ltd/gitops-template.git
+    targetRevision: HEAD
+    path: mongodb
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mongodb
+  syncPolicy:
+    automated:
+      prune: true
