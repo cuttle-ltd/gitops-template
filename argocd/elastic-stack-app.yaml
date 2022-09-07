@@ -10,8 +10,8 @@ spec:
     targetRevision: HEAD
     path: elastic-stack
   destination:
-    server: '{{url}}'
-    namespace: '{{namespace}}'
+    server: https://kubernetes.default.svc
+    namespace: elastic-stack
   syncPolicy:
     automated:
       prune: true
