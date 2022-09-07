@@ -2,6 +2,8 @@ apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: elasticsearch
+  annotations:
+    linkerd.io/inject: enabled
 spec:
   version: 8.3.3
   # (disabled) volumeClaimDeletePolicy: DeleteOnScaledownOnly
