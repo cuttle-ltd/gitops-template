@@ -1,5 +1,5 @@
-apiVersion: mongodb.com/v1
-kind: MongoDB
+apiVersion: mongodbcommunity.mongodb.com/v1
+kind: MongoDBCommunity
 metadata:
   name: mongodb
   annotations:
@@ -24,4 +24,3 @@ spec:
       scramCredentialsSecretName: my-scram
   additionalMongodConfig:
     storage.wiredTiger.engineConfig.journalCompressor: zlib
-  persistent: true
